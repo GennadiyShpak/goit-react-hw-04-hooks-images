@@ -32,7 +32,7 @@ function App() {
       if (data.hits.length === 0) {
         setError(true);
       } else {
-        setFetchResponce([...fetchResponce, ...data.hits]);
+        setFetchResponce(prevState => [...prevState, ...data.hits]);
         setLoading(false);
       }
     }
