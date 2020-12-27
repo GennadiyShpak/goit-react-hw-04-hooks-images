@@ -28,16 +28,20 @@ function App() {
     }
     async function fetchImages() {
       setLoading(true);
-      const data = await FetchImg(pictureInfo, currentPage);
-      if (data.hits.length === 0) {
-        setError(true);
-      } else {
-        setFetchResponce(prevState => [...prevState, ...data.hits]);
-        setLoading(false);
+      try {
+        const data = await FetchImg(pictureInfo, currentPage);
+        if (data.hits.length === 0) {
+          setError(true);
+        } else {
+          setFetchResponce(prevState => [...prevState, ...data.hits]);
+          setLoading(false);
+        }
+      } catch {
+        console.log('error', error);
       }
     }
     fetchImages();
-  }, [currentPage, pictureInfo]);
+  }, [currentPage, error, pictureInfo]);
 
   useEffect(() => {
     if (!pictureInfo) {
