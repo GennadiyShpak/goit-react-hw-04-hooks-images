@@ -1,4 +1,4 @@
-import ImageGalleryItem from '../ImageGalleryItem';
+import ImageGalleryItem from './ImageGalleryItem';
 
 function ImageGallery({ fetchArr, showModal, onClick }) {
   return (

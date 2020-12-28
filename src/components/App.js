@@ -29,11 +29,11 @@ function App() {
     async function fetchImages() {
       setLoading(true);
       try {
-        const data = await FetchImg(pictureInfo, currentPage);
-        if (data.hits.length === 0) {
+        const { hits } = await FetchImg(pictureInfo, currentPage);
+        if (hits.length === 0) {
           setError(true);
         } else {
-          setFetchResponce(prevState => [...prevState, ...data.hits]);
+          setFetchResponce(prevState => [...prevState, ...hits]);
           setLoading(false);
         }
       } catch {
