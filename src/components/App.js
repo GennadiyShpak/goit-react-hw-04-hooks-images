@@ -63,6 +63,7 @@ function App() {
   function modalImgHandler({ target }) {
     const { url } = target.dataset;
     setDatasetUrl(url);
+    console.log(target);
   }
 
   function handleSearchValue(data) {
