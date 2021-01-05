@@ -82,7 +82,7 @@ function App() {
       <SearchBar onSubmit={handleSearchValue} />
       {error && (
         <h1>
-          По вашему запросу <span className="error">"{pictureInfo}"</span>{' '}
+          По вашему запросу <span className="error">"{pictureInfo}"</span>
           ничего не найденно, введите корректный запрос
         </h1>
       )}
